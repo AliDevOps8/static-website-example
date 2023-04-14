@@ -10,7 +10,7 @@ pipeline {
         PRODUCTION = "chocoapp-prod"
         DOCKERHUB_ID = "alidevops8"
         DOCKERHUB_PASSWORD = credentials('dockerhub_password')
-        APP_NAME = "ulrich"
+        APP_NAME = "ali"
         STG_API_ENDPOINT = "3.80.51.45"
         STG_APP_ENDPOINT = "3.80.51.45"
         PROD_API_ENDPOINT = "44.197.47.163"
