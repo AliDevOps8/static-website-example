@@ -16,7 +16,7 @@ pipeline {
         PROD_API_ENDPOINT = "44.197.47.163"
         PROD_APP_ENDPOINT = "44.197.47.163"
         INTERNAL_PORT = "80"
-        EXTERNAL_PORT = "${PORT_EXPOSED}"
+        EXTERNAL_PORT = "80"
         CONTAINER_IMAGE = "${DOCKERHUB_ID}/${IMAGE_NAME}:${IMAGE_TAG}"
     }
     agent none
@@ -81,7 +81,7 @@ pipeline {
       steps {
           script {
             sh """
-              echo  {\\"your_name\\":\\"${APP_NAME}\\",\\"container_image\\":\\"${CONTAINER_IMAGE}\\", \\"external_port\\":\\"${EXTERNAL_PORT}80\\", \\"internal_port\\":\\"${INTERNAL_PORT}\\"}  > data.json 
+              echo  {\\"Ali SAMID\\":\\"${APP_NAME}\\",\\"container_image\\":\\"${CONTAINER_IMAGE}\\", \\"external_port\\":\\"${EXTERNAL_PORT}80\\", \\"internal_port\\":\\"${INTERNAL_PORT}\\"}  > data.json 
               curl -v -X POST http://${STG_API_ENDPOINT} -H 'Content-Type: application/json'  --data-binary @data.json  2>&1 | grep 200
             """
           }
