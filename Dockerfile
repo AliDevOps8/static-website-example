@@ -1,4 +1,4 @@
-FROM nginx:1.21.1
+FROM nginx:1.25.4
 LABEL maintainer="Ali SAMID"
 RUN apt-get update && \
     apt-get upgrade -y && \
